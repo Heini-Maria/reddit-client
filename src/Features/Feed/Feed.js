@@ -1,13 +1,10 @@
 import Post from '../Post/Post';
 
-const Feed = ({ setShowingComments }) => {
+const Feed = () => {
     return (
         <section className='feed'>
-         <Post 
-         setShowingComments={setShowingComments}/>
-         <Post 
-         setShowingComments={setShowingComments}
-         />   
+         <Post />
+         <Post />   
         </section>
     )
 }

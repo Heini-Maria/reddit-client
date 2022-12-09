@@ -9,8 +9,6 @@ import comments from '../../Assets/images/comments.png';
 
 const Post = () => {
 
-
-    
     return (
         <section className='post'>
             <article>

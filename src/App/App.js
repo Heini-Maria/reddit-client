@@ -11,11 +11,11 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Comments />
+     {/*  <Comments /> */}
       <Routes>
         <Route path='/' element={<Diy />}/>
         <Route path='/crafts' element={<Crafts/>} />
-        <Route path='/crafts' element={<Comments />}/>
+       <Route path='/' element={<Comments />}/>
       </Routes>
     </div>
   );
