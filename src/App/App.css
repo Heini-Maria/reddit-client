@@ -111,5 +111,19 @@ ul li {
   font-family: 'Actor', sans-serif;
   border: none;
 }
-
-
+.diy, .crafts {
+  display: flex;
+  justify-content: space-around;
+}
+.diy {
+  height: 100vh;
+  background-color: #F7F1DF;
+}
+.crafts {
+  height: 100vh;
+  background-color: #F1DCFA;
+}
+.feed {
+  width: 50%;
+  background-color: white;
+}
