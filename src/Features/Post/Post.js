@@ -7,20 +7,25 @@ import comments from '../../Assets/images/comments.png';
 
 const Post = () => {
     return (
-        <section classname='post'>
+        <section className='post'>
             <article>
+                <div className='post-texts'>
                 <p>1 hour ago by Me</p>
                 <h2>Needle felted hedgehog</h2>
-                <img src={hedgehog}/>
+                </div>
+                <img className='post-img' src={hedgehog}/>
             </article>
-            <aside>
-                <span>
-                    <img src={arrowup}/>150<img src={arrowdown}/>
+            <aside className='post-aside'>
+                <span className='voting'>
+                    <img className='post-icon' src={arrowup}/>
+                    <p>150</p>
+                    <img className='post-icon' src={arrowdown}/>
                 </span>
-                <button>
-                    <img src={comments}/> 15
+                <button className='comments'>
+                    <img className='comment-icon' src={comments} />
+                    <p>15</p>
                 </button>
-                <a>See on Reddit</a>
+                <a>Check on Reddit</a>
             </aside>
         </section>
     )

@@ -31,6 +31,21 @@ h1 {
   font-size: 1.5em;
   color: #3B3A3A;
 }
+h2 {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.2em;
+  padding-top: 1.5em;
+}
+p {
+  font-family: 'Actor', sans-serif;
+  color: #3B3A3A;
+  font-size: 0.8em;
+}
+a {
+  color: #3B3A3A;
+  font-style: bold;
+  text-decoration: underline;
+}
 ul li {
   list-style: none;
 }
@@ -116,14 +131,61 @@ ul li {
   justify-content: space-around;
 }
 .diy {
-  height: 100vh;
+  height: 100%;
   background-color: #F7F1DF;
 }
 .crafts {
-  height: 100vh;
+  height: 100%;
   background-color: #F1DCFA;
 }
 .feed {
   width: 50%;
+}
+.post {
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1.5em;
   background-color: white;
+  border-radius: 0.6em;
+  margin-top: 1em;
+}
+.post-texts {
+  text-align: left;
+}
+.post-img {
+  width: 100%;
+  height: auto;
+  margin-top: 2em;
+}
+.post-aside {
+  display:flex;
+  align-items: flex-end;
+}
+.post-icon,
+.comments .comment-icon  {
+  height: 1.3em;
+}
+.post-aside {
+  font-family: 'Actor', sans-serif;
+  color: #3B3A3A;
+  font-size: 0.8em;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 0.2em;
+}
+.voting, 
+.comments {
+  display:flex;
+  align-items: center;
+  font-weight: bold;
+}
+.voting button {
+  padding: 0.5em 0.8em;
+  border: 1px solid #3B3A3A;
+  border-radius: 0.6em;
+}
+.comments p {
+  margin: 0 0.5em;
 }
