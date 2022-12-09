@@ -5,7 +5,12 @@ import arrowdown from '../../Assets/images/arrowdown.png';
 import comments from '../../Assets/images/comments.png';
 
 
+
+
 const Post = () => {
+
+
+    
     return (
         <section className='post'>
             <article>
@@ -21,8 +26,10 @@ const Post = () => {
                     <p>150</p>
                     <img className='post-icon' src={arrowdown}/>
                 </span>
-                <button className='comments'>
-                    <img className='comment-icon' src={comments} />
+              
+                <button 
+                className='comments-button'>
+                    <img className='comments-icon' src={comments} />
                     <p>15</p>
                 </button>
                 <a>Check on Reddit</a>

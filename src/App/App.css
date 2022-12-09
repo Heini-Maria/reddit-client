@@ -17,7 +17,7 @@
   font-size: normal;
 }
 * {
-  /* border: 1px solid red; */
+  /* border: 1px solid red;  */
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -57,7 +57,7 @@ ul li {
 
 .App-header {
   background-color: white;
-  height: 10em;
+  height: 5em;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -163,7 +163,8 @@ ul li {
   align-items: flex-end;
 }
 .post-icon,
-.comments .comment-icon  {
+.comments-icon,
+.close-icon  {
   height: 1.3em;
 }
 .post-aside {
@@ -176,7 +177,7 @@ ul li {
   padding-top: 0.2em;
 }
 .voting, 
-.comments {
+.comments-button {
   display:flex;
   align-items: center;
   font-weight: bold;
@@ -186,6 +187,60 @@ ul li {
   border: 1px solid #3B3A3A;
   border-radius: 0.6em;
 }
-.comments p {
+.comments-button p {
   margin: 0 0.5em;
+}
+.comments {
+  position: fixed;
+  width: 80%;
+  top: 20%;
+  left: 10%;
+  height: 70%;
+  padding: 0.5em 1em;
+  border-radius: 0.6em;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow: scroll;  
+}
+.comments-top-bar {
+  display: flex;
+  position: fixed;
+  top: 20%;
+  background-color: white;
+  width: 75%;
+  height: 3em;
+  align-items: center;
+  justify-content: space-between;
+}
+.top-bar-item {
+  display: flex;
+  align-items: flex-end;
+}
+.top-bar-item h2 {
+  padding: 0;
+  margin-left: 0.5em;
+}
+.top-bar-item button {
+  border: none;
+  width: 2em;
+}
+.comment {
+  margin-top: 3.5em;
+  text-align: left;
+  width: 100%;
+}
+.comment-header {
+  display: flex;
+  align-items: flex-end;
+}
+.profile-pic {
+  height: 1.5em;
+  margin-right: 0.2em;
+}
+.comment > p {
+  padding: 0.8em 0em 0.6em 0.5em;
+  font-weight: bold;
 }
