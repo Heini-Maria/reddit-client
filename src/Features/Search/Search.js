@@ -1,8 +1,7 @@
 import searchdiy from '../../Assets/images/searchdiy.png'
 
 
-const Search = () => {
-
+const Search = () =>{
 
 return (
 <form className='search-bar'>

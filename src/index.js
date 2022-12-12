@@ -4,11 +4,26 @@ import './index.css';
 import App from './App/App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import { configureStore } from '@reduxjs/toolkit';
+import { Provider } from 'react-redux';
+import commentsReducer from './Features/Comments/CommentsSlice';
+import postReducer from './Features/Post/PostSlice';
+import commentReducer from './Features/Comment/CommentSlice';
+
+const store = configureStore({
+  reducer: {
+    comments: commentsReducer,
+    post: postReducer,
+    comment: commentReducer,
+  },
+})
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </BrowserRouter>
 );
 

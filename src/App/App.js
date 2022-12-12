@@ -11,7 +11,6 @@ function App() {
   return (
     <div className="App">
       <Header />
-     {/*  <Comments /> */}
       <Routes>
         <Route path='/' element={<Diy />}/>
         <Route path='/crafts' element={<Crafts/>} />
