@@ -9,7 +9,7 @@ const Comment = () => {
     return (
         <section className='comment'>
             <div className='comment-header'>
-            <img className='profile-pic' src={user} />
+            <img className='profile-pic' src={comment.profileimg} />
             <p>{comment.userName} {comment.time} ago</p>
             </div>
             <p>{comment.comment}</p>
