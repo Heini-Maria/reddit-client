@@ -210,6 +210,16 @@ ul li {
   border: 1px solid #3B3A3A;
   border-radius: 0.6em;
 }
+.comments-button {
+  background-color: white;
+  border-radius: 0.6em;
+  border:  1px solid #3B3A3A;
+  padding: 0 0.5em;
+  margin: 0;
+}
+.comments-button:hover {
+  border:  1.5px solid #3B3A3A;
+}
 .comments-button p {
   margin: 0 0.5em;
 }
@@ -261,6 +271,10 @@ ul li {
 .top-bar-item button {
   border: none;
   width: 2em;
+  background-color: white;
+}
+.top-bar-item button:hover {
+  width: 2.2em;
 }
 .comment {
   margin-top: 3.5em;
