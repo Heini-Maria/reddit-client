@@ -4,16 +4,25 @@ import Comment from '../Comment/Comment.js';
 import { hideComments } from '../Comments/CommentsSlice';
 import { useDispatch } from 'react-redux';
 import commentsSlice from './CommentsSlice';
+import { useEffect, useState } from 'react';
+import { getPostComments } from '../../Components/Reddit';
 
 
-const Comments = () => {
+const Comments = ({permalink, comments, post}) => {
     const dispatch = useDispatch();
+
+
+
+
+    
+console.log(comments);
+
     return (
     <section className='comments'>
         <div className='comments-top-bar'>
             <article className='top-bar-item'>
                 <img className='comments-icon'src={commentsicon}/>
-                <h2>15 Comments</h2>
+                <h2>{post.num_comments} Comments</h2>
             </article>
             <aside className='top-bar-item'>
                 <button onClick = {() => {
@@ -23,11 +32,9 @@ const Comments = () => {
                 </button>
             </aside>
         </div>
-        <Comment />
-        <Comment />
-        <Comment />
-        <Comment />
+            {comments.map((comment, index) => <Comment key={comment.author + index} comment={comment} /> )}    
     </section>    
     )
 }
+
 export default Comments;

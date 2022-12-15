@@ -1,9 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-
-export const postSlice = createSlice ({
-    name: 'post',
-    initialState: [],
+export const diySlice = createSlice ({
+    name: 'sewing',
+    initialState: 'sewing',
     reducers: {
         getPosts: (state, action) => {
             state = action.payload;
@@ -12,4 +11,3 @@ export const postSlice = createSlice ({
 })
 export default postSlice.reducer;
 export const { getPosts } = postSlice.actions;
-

@@ -3,26 +3,17 @@ import ReactDOM from 'react-dom/client';
 import App from './App/App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import { configureStore } from '@reduxjs/toolkit';
+import { store } from '../src/App/store';
 import { Provider } from 'react-redux';
-import commentsReducer from './Features/Comments/CommentsSlice';
-import postReducer from './Features/Post/PostSlice';
-import commentReducer from './Features/Comment/CommentSlice';
 
-const store = configureStore({
-  reducer: {
-    comments: commentsReducer,
-    post: postReducer,
-    comment: commentReducer,
-  },
-})
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <Provider store={store} >
+        <App 
+        />
+      </Provider>    
   </BrowserRouter>
 );
 

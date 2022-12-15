@@ -4,18 +4,20 @@ import arrowdown from '../../Assets/images/arrowdown.png';
 import commentSlice from './CommentSlice';
 import { useSelector } from 'react-redux';
 
-const Comment = () => {
-    const comment = useSelector((state) => state.comment.value);
+const Comment = ({comment}) => {
+   
+   console.log(comment)
+
     return (
         <section className='comment'>
             <div className='comment-header'>
-            <img className='profile-pic' src={comment.profileimg} />
-            <p>{comment.userName} {comment.time} ago</p>
+            <img className='profile-pic' src='#' />
+            <p>{comment.author} {comment.created_utc} ago</p>
             </div>
-            <p>{comment.comment}</p>
+            <p>{comment.body}</p>
             <span className='voting'>
                     <img className='post-icon' src={arrowup}/>
-                    <p>{comment.voting}</p>
+                    <p>{comment.score}</p>
                     <img className='post-icon' src={arrowdown}/>
             </span>
         </section>

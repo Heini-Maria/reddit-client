@@ -15,7 +15,7 @@ return (
         </section>
         <nav className="nav">
             <NavLink to='/'>
-            <button className="button-diy">Diy</button>
+            <button className="button-diy">Sewing</button>
             </NavLink>
             <NavLink to='/crafts'>
             <button className="button-crafts">Crafts</button>
