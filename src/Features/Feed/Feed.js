@@ -1,9 +1,7 @@
 import Post from '../Post/Post';
-import React, {useState, useEffect} from 'react';
+import React, { useEffect } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import { setPosts } from './FeedSlice';
-
-
 
 
 const Feed = ({subreddit}) => {
@@ -53,11 +51,13 @@ const generateFeed = () => {
     })
   }
 
+
 useEffect(() => {
   generateFeed()
 
 }, [subreddit, searchText]);
 
+console.log(posts)
 
     return (
         <section className='feed'>
