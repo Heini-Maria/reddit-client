@@ -1,12 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import commentsReducer from '../Features/Comments/CommentsSlice';
-import postReducer from '../Features/Post/PostSlice';
-import commentReducer from '../Features/Comment/CommentSlice';
+import feedReducer from '../Features/Feed/FeedSlice'
 
 export const store = configureStore({
     reducer: {
-    comments: commentsReducer,
-    post: postReducer,
-    comment: commentReducer,
+    feed: feedReducer,
 }
   });

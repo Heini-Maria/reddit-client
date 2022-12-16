@@ -4,60 +4,70 @@ import arrowdown from '../../Assets/images/arrowdown.png';
 import commentsicon from '../../Assets/images/commentsicon.png';
 import Comments from '../Comments/Comments.js';
 import { useSelector, useDispatch } from 'react-redux';
-import { showComments } from '../Comments/CommentsSlice'; 
-import { postSlice } from '../Post/PostSlice';
 import { utcToString } from '../../Assets/util';
-import { getPostComments } from '../../Components/Reddit';
 import { useEffect, useState } from 'react';
+import { setComments, toggleShowingComments} from '../Feed/FeedSlice';
 
 
-const Post  = ({ permalink, post, setActivePost}) =>{
-    const showedComments = useSelector((state) => state.comments.value);
+const Post  = (props) =>{
     const dispatch = useDispatch();
-    const [comments, setComments] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-    
- 
-    useEffect(() => {
+    const index = props.id;
+    const permalink = props.post.data.permalink;
+    const comments = props.post.comments;
 
-        async function fetchData() {
-            setComments([]); //clear replies from screen
-            setIsLoading(true); //notify Replies that we are awaiting replies
-            const comments= await getPostComments(permalink);
-            setIsLoading(false); //notify Replies that replies have been fetched
-            setComments(comments);
+    const getPostComments = async (permalink) => {
+        try {
+          await fetch(`https://www.reddit.com/${permalink}.json`)
+            .then((response) => response.json())
+            .then(jsonResponse => {
+              console.log("comments", jsonResponse[1].data.children.map((comment) => comment.data))
+              const comments = jsonResponse[1].data.children.map((comment) => comment.data)
+              dispatch(setComments({ index, comments }))
+            })
+        } catch (error) {
+          console.log(error)
         }
-        fetchData();
-    }, []);
-
+      };
+      const fetchComments = (index, permalink) => async (dispatch) => {
+        try {
+          await getPostComments(permalink);
+        } catch (error) {
+          console.log(error);
+        }
+      }
     
+      const onToggleComments = async () => {
+        console.log(index, permalink)
+        if (props.post.comments.length < 1) {
+          dispatch(fetchComments(index, permalink));
+        }
+        dispatch(toggleShowingComments(index))
+      };    
         return (
         <section className='post' >
             <article>
                 <div className='post-texts'>
-                <p>{utcToString(post.created_utc)} ago by {post.author}</p>
-                <h2>{post.title}</h2>
+                <p>{utcToString(props.post.data.created_utc)} ago by {props.post.data.author}</p>
+                <h2>{props.post.data.title}</h2>
                 </div>
-                <img className='post-img' src={post.url}/>
+                <img className='post-img' src={props.post.data.url}/>
             </article>
             <aside className='post-aside'>
                 <span className='voting'>
                     <img className='post-icon' src={arrowup}/>
-                    <p>{post.ups}</p>
+                    <p>{props.post.data.ups}</p>
                     <img className='post-icon' src={arrowdown}/>
                 </span>
               
                 <button 
                 className='comments-button'
-                onClick = {() => {
-                    dispatch(showComments({value: true}));
-                    }}>
+                onClick = {onToggleComments}>
                 <img className='comments-icon' src={commentsicon}/>
-                <p>{post.num_comments}</p>
+                <p>{props.post.data.num_comments}</p>
                 </button>
-                <a href={permalink} target='_blank'>Check on Reddit</a>
+                <a href={`https://www.reddit.com/${permalink}`} target='_blank'>Check on Reddit</a>
             </aside>
-            { showedComments.value == true ? <Comments permalink={permalink} post={post} comments={comments} /> : null }
+            { props.post.showingComments ?  <Comments comments={comments} index={index} post={props.post.data} /> : null }
         </section>
     )
 }

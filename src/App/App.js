@@ -1,6 +1,6 @@
 import './App.css';
 import Header from '../Components/Header';
-import Sewing from '../Features/Diy/Sewing';
+import Sewing from '../Features/Sewing/Sewing';
 import Crafts from '../Features/Crafts/Crafts';
 import { Routes, Route } from 'react-router-dom';
 import Comments from '../Features/Comments/Comments';

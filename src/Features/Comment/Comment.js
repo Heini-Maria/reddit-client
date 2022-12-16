@@ -1,8 +1,6 @@
-import user from '../../Assets/images/user.png'
 import arrowup from '../../Assets/images/arrowup.png';
 import arrowdown from '../../Assets/images/arrowdown.png';
-import commentSlice from './CommentSlice';
-import { useSelector } from 'react-redux';
+import { utcToString } from '../../Assets/util';
 
 const Comment = ({comment}) => {
    
@@ -11,8 +9,7 @@ const Comment = ({comment}) => {
     return (
         <section className='comment'>
             <div className='comment-header'>
-            <img className='profile-pic' src='#' />
-            <p>{comment.author} {comment.created_utc} ago</p>
+            <p>{comment.author} {utcToString(comment.created_utc)} ago</p>
             </div>
             <p>{comment.body}</p>
             <span className='voting'>

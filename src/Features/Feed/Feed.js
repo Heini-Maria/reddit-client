@@ -1,14 +1,50 @@
-import { getDiyPosts } from '../../Components/Reddit';
 import Post from '../Post/Post';
-import { useState } from 'react';
+import React, {useState, useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import { setPosts } from './FeedSlice';
 
-const Feed = ({posts}) => {
-    const [activePost, setActivePost] = useState(false);
+
+
+const Feed = ({subreddit}) => {
+const dispatch = useDispatch();
+const posts = useSelector((state) => state.feed.posts);
+
+
+const generateFeed = () => {
+    fetch(`https://www.reddit.com/r/${subreddit}.json`).then(res => {
+      if(res.status!==200){
+        console.log(`${res.status} error!`)
+        return;
+      }
+      res.json().then(data => {
+        if(data!==null){
+          console.log(data)
+          const posts = data.data.children
+        .filter(post => {
+            if (post.data.post_hint == 'image') return true;
+            return false;
+          })
+          const postsWithMetadata = posts.map((post) => ({
+            ...post,
+            showingComments: false,
+            comments: [],
+            loadingComments: false,
+            errorComments: false,
+          }));
+          dispatch(setPosts(postsWithMetadata));
+          console.log(posts);
+        }
+      });
+    })
+  }
+  useEffect(() => {
+    generateFeed()
+  }, [subreddit]);
 
     return (
         <section className='feed'>
            {
-            (posts != null) ? posts.map((post, index) => <Post key={index} post={post.data} permalink={post.data.permalink} setActivePost={setActivePost}/>) : ''
+            (posts != null) ? posts.map((post, index) => <Post key={index} id={index} post={post} />) : ''
          
            } 
         </section>

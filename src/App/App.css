@@ -285,10 +285,6 @@ ul li {
   display: flex;
   align-items: flex-end;
 }
-.profile-pic {
-  height: 1.5em;
-  margin-right: 0.2em;
-}
 .comment > p {
   padding: 0.8em 0em 0.6em 0.5em;
   font-weight: bold;
