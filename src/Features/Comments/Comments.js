@@ -6,9 +6,8 @@ import { toggleShowingComments } from '../Feed/FeedSlice';
 
 
 const Comments = ({ comments, post, index }) => {
-    const dispatch = useDispatch();
-   
-    const onToggleComments = async () => {
+    const dispatch = useDispatch();   
+    const handleClick = async () => {
         dispatch(toggleShowingComments(index))
       };
 
@@ -23,7 +22,7 @@ console.log(comments);
                 <h2>{comments.length} Comments</h2>
             </article>
             <aside className='top-bar-item'>
-                <button onClick = {onToggleComments}>
+                <button onClick = {handleClick}>
                     <img className='close-icon' src={close} />
                 </button>
             </aside>

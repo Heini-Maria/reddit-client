@@ -18,7 +18,6 @@ const generateFeed = () => {
       }
       res.json().then(data => {
         if(data!==null){
-          console.log(data)
           const posts = data.data.children
         .filter(post => {
             if (post.data.post_hint == 'image') return true;
@@ -32,7 +31,6 @@ const generateFeed = () => {
             errorComments: false,
           }));
           dispatch(setPosts(postsWithMetadata));
-          console.log(posts);
         }
       });
     })

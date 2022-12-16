@@ -1,11 +1,9 @@
-import hedgehog from '../../Assets/images/hedgehog.png';
 import arrowup from '../../Assets/images/arrowup.png';
 import arrowdown from '../../Assets/images/arrowdown.png';
 import commentsicon from '../../Assets/images/commentsicon.png';
 import Comments from '../Comments/Comments.js';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { utcToString } from '../../Assets/util';
-import { useEffect, useState } from 'react';
 import { setComments, toggleShowingComments} from '../Feed/FeedSlice';
 
 
@@ -20,7 +18,6 @@ const Post  = (props) =>{
           await fetch(`https://www.reddit.com/${permalink}.json`)
             .then((response) => response.json())
             .then(jsonResponse => {
-              console.log("comments", jsonResponse[1].data.children.map((comment) => comment.data))
               const comments = jsonResponse[1].data.children.map((comment) => comment.data)
               dispatch(setComments({ index, comments }))
             })
@@ -36,8 +33,7 @@ const Post  = (props) =>{
         }
       }
     
-      const onToggleComments = async () => {
-        console.log(index, permalink)
+      const handleClick = async () => {
         if (props.post.comments.length < 1) {
           dispatch(fetchComments(index, permalink));
         }
@@ -61,7 +57,7 @@ const Post  = (props) =>{
               
                 <button 
                 className='comments-button'
-                onClick = {onToggleComments}>
+                onClick = {handleClick}>
                 <img className='comments-icon' src={commentsicon}/>
                 <p>{props.post.data.num_comments}</p>
                 </button>

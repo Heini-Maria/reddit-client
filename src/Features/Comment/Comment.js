@@ -4,8 +4,6 @@ import { utcToString } from '../../Assets/util';
 
 const Comment = ({comment}) => {
    
-   console.log(comment)
-
     return (
         <section className='comment'>
             <div className='comment-header'>
