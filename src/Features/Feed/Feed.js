@@ -13,7 +13,7 @@ const isLoading = useSelector((state) => state.feed.isLoading);
 
 console.log(searchText);
 
-const generateFeed = () => {
+ const generateFeed = () => {
   dispatch(setIsloading(true));
     fetch(`https://www.reddit.com/r/${subreddit}.json?limit=50`).then(res => {
       if(res.status!==200){
@@ -54,8 +54,8 @@ const generateFeed = () => {
         }
       });
     })
-  }
-
+  } 
+ 
 
 useEffect(() => {
   
@@ -77,4 +77,4 @@ console.log(posts)
         </section>
     )
 }
-export default Feed;
+export default Feed ;

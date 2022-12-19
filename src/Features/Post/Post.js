@@ -46,13 +46,13 @@ const Post  = (props) =>{
                 <p>{utcToString(props.post.data.created_utc)} ago by {props.post.data.author}</p>
                 <h2>{props.post.data.title}</h2>
                 </div>
-                <img className='post-img' src={props.post.data.url}/>
+                <img className='post-img' src={props.post.data.url} alt='post image'/>
             </article>
             <aside className='post-aside'>
                 <span className='voting'>
-                    <img className='post-icon' src={arrowup}/>
+                    <img className='post-icon' src={arrowup} alt='Arrow up'/>
                     <p>{props.post.data.ups}</p>
-                    <img className='post-icon' src={arrowdown}/>
+                    <img className='post-icon' src={arrowdown} alt='Arrow down'/>
                 </span>
               
                 <button 

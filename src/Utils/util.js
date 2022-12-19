@@ -11,24 +11,24 @@ export const utcToString = utcCreated => {
 
     if ( secondsSince < secondsMin) {
         return `less than minute.`;
-    } else if (secondsSince < secondsHr) { //less than 1 hour
+    } else if (secondsSince < secondsHr) { 
         const minutes = Math.floor( secondsSince / secondsMin );
         return `less than hour`;
-    } else if (secondsSince < secondsDay ) { //less than 1 day
+    } else if (secondsSince < secondsDay ) { 
         const hours = Math.floor( secondsSince / secondsHr);
         if (hours < 2 ) {
         return `${hours} hour`;
         } else {
             return `${hours} hours`;
         }
-    } else if (secondsSince < secondsMonth) { //less than 1 month
+    } else if (secondsSince < secondsMonth) { 
         const days = Math.floor( secondsSince / secondsDay);
         if (days === 1) return `1 day`;
         return `${days} days`;
-    }   else if (secondsSince < secondsYear) { //less than 1 year
+    }   else if (secondsSince < secondsYear) { 
         const months = Math.floor( secondsSince / secondsMonth);
         return `${months} month`;
-    } else { //1 year or more
+    } else {
         const years = Math.floor( secondsSince / secondsYear);
         return `${years} yr.`;
     }
