@@ -2,7 +2,8 @@ import Feed from '../Feed/Feed';
 
 
 const Sewing = () => {
-  const subreddit = 'sewing';
+const subreddit = 'sewing'
+
 
 return (
     <section className="diy">

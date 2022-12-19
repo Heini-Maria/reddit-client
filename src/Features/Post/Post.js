@@ -3,7 +3,7 @@ import arrowdown from '../../Assets/images/arrowdown.png';
 import commentsicon from '../../Assets/images/commentsicon.png';
 import Comments from '../Comments/Comments.js';
 import { useDispatch } from 'react-redux';
-import { utcToString } from '../../Assets/util';
+import { utcToString } from '../../Utils/util';
 import { setComments, toggleShowingComments} from '../Feed/FeedSlice';
 
 

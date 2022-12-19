@@ -223,6 +223,29 @@ ul li {
 .comments-button p {
   margin: 0 0.5em;
 }
+h2.noresult {
+  height: 100vh;
+  margin-top: 10em;
+
+}
+
+.loading {
+  position: fixed;
+  top: 15em;
+  left: 45%;
+  padding: 0;
+  border: 1em solid rgb(231, 226, 226);
+  border-radius: 50%;
+  border-top: 1em solid #873EA3;
+  width: 5em;
+  height: 5em;
+  animation: spinner 1.5s linear infinite;
+}
+
+@keyframes spinner {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 @media only screen and (max-width: 530px) {
   .feed {
     width: 80%;

@@ -5,8 +5,9 @@ import { useDispatch } from 'react-redux';
 import { toggleShowingComments } from '../Feed/FeedSlice';
 
 
-const Comments = ({ comments, post, index }) => {
-    const dispatch = useDispatch();   
+const Comments = ({ comments, index }) => {
+    const dispatch = useDispatch();
+ 
     const handleClick = async () => {
         dispatch(toggleShowingComments(index))
       };
@@ -27,7 +28,10 @@ console.log(comments);
                 </button>
             </aside>
         </div>
-            {comments.map((comment, index) => <Comment key={index} index={index} comment={comment} /> )}    
+            {
+    
+            comments.map((comment, index) => <Comment key={index} index={index} comment={comment} /> )
+            }    
     </section>    
     )
 }

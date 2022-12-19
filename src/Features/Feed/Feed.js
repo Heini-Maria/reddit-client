@@ -1,17 +1,20 @@
 import Post from '../Post/Post';
 import React, { useEffect } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import { setPosts } from './FeedSlice';
+import { setPosts, setIsloading } from './FeedSlice';
 
 
 const Feed = ({subreddit}) => {
 const dispatch = useDispatch();
 const posts = useSelector((state) => state.feed.posts);
 const searchText = useSelector((state) => state.search.searchText);
+const isLoading = useSelector((state) => state.feed.isLoading);
+
 
 console.log(searchText);
 
 const generateFeed = () => {
+  dispatch(setIsloading(true));
     fetch(`https://www.reddit.com/r/${subreddit}.json?limit=50`).then(res => {
       if(res.status!==200){
         console.log(`${res.status} error!`)
@@ -34,6 +37,7 @@ const generateFeed = () => {
           }));
           if (searchText == '') {
             dispatch(setPosts(detailedPosts));
+            dispatch(setIsloading(false));
           } else {
             const search = (searchText) => {
               let result = posts.filter(object => {
@@ -45,6 +49,7 @@ const generateFeed = () => {
               return result;
           }
           dispatch(setPosts(search(searchText)));
+          dispatch(setIsloading(false));
           }
         }
       });
@@ -53,7 +58,10 @@ const generateFeed = () => {
 
 
 useEffect(() => {
+  
+  console.log(isLoading);
   generateFeed()
+  
 
 }, [subreddit, searchText]);
 
@@ -61,8 +69,9 @@ console.log(posts)
 
     return (
         <section className='feed'>
-           {
-            (posts != null) ? posts.map((post, index) => <Post key={index} id={index} post={post} />) : ''
+           { 
+            (isLoading == true) ? <div className='loading'></div> :
+            (posts.length > 0 ) ? posts.map((post, index) => <Post key={index} id={index} post={post} />) : <h2 className='noresult'>No posts found..</h2>
          
            } 
         </section>
