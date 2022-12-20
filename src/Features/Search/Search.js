@@ -30,7 +30,8 @@ return (
     <button type="submit" 
     className='submit-button'
     onClick= {handleClick}
-    ><img src={searchdiy}/></button>
+    name= 'Search'
+    ><img src={searchdiy} alt='serach icon'/></button>
     
 </form>    
 )    

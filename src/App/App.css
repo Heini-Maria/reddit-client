@@ -111,6 +111,7 @@ ul li {
   padding: 0;
   border: none;
   height: 2.2em;
+  width: 2.2em;
   margin-left: 0.5em;
 }
 
@@ -177,7 +178,7 @@ ul li {
   text-align: left;
 }
 .post-img {
-  width: 100%;
+  width: 250px;
   height: auto;
   margin-top: 2em;
 }
@@ -188,7 +189,8 @@ ul li {
 .post-icon,
 .comments-icon,
 .close-icon  {
-  height: 1.3em;
+  height: 1em;
+  width: 1em;
 }
 .post-aside {
   font-family: 'Actor', sans-serif;
