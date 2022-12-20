@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# Diddit  = Reddit Client for sewing & Crafts subreddits
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was made in a part of CodeCademy's Front-end engineer carreer path. The purpose was to create a minimalistic Reddit Client using React and Redux. Because of my love to DIY projects, I decided to devote the client for Sewing and Crafts subreddits. For making the application more visual I decided to only show the posts that has picture.
 
-## Available Scripts
+The application allows the user to view the posts of two subreddits, search posts within the subreddit with a searchterm and see stats and main comments of each post. 
 
-In the project directory, you can run:
+Visit the deployed application here:
 
-### `npm start`
+## Wireframes
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Here are wireframes I planned for different screen sizes:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![MacBook Air_2](https://user-images.githubusercontent.com/115211431/208636234-083ec0ff-dd50-4e9c-a489-d5b5ae242f1a.png)
+![iPhone 13 in 5 colors_1](https://user-images.githubusercontent.com/115211431/208636291-7c7ebae5-1208-40bf-b6e9-dc2f6cb89e6c.png)
 
-### `npm test`
+## Technologies used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  * React
+  * Redux
+  * Redux Toolkit
+    
+## Features
 
-### `npm run build`
+  * Shows posts for crafts and Sewing categories
+  * Updates the feed based on selected gategory
+  * Allows user to seach for posts in selected category with a search term
+  * Shows the main comments and stats for each post
+  * Allows the user to view the original Post on Reddit
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Limitations
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  * For now the application doesn't show the comment replies, only the original comments
+  * user can't comment or give votes directly in the application
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Future work
 
-### `npm run eject`
+  * Fetch the comment replies as a part of the comments view
+  * Show the comment authors profile picture on comments view
+  * Refactore the code to make testing easier
+  * write tests for components
+  
+## Personal experience 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+At the beginning I was overwhelmed and was not even familiar with Reddit and how it works. After getting some inspiration and getting more familiar with the Reddit, I decided to take one step at a time and found the flow. At the end the project thought me alot and help me to get more comfortable using React and Redux. The project itself was super rewarding and eventhough I am not 100% happy with the code I pulled it through. If I would start the project from start again I would structure the code differently and divide the components and actions in smaller functions that would be easier to test. 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+well live & learn ☺️
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Any feedback is higly appreciated.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
