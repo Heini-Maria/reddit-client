@@ -4,7 +4,7 @@ This project was made in a part of CodeCademy's Front-end engineer carreer path.
 
 The application allows the user to view the posts of two subreddits, search posts within the subreddit with a searchterm and see stats and main comments of each post. 
 
-Visit the deployed application here:
+Visit the deployed application here: https://cosmic-kringle-9deec8.netlify.app
 
 ## Wireframes
 
