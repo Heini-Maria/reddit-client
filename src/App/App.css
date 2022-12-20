@@ -178,7 +178,7 @@ ul li {
   text-align: left;
 }
 .post-img {
-  width: 250px;
+  width: 100%;
   height: auto;
   margin-top: 2em;
 }
