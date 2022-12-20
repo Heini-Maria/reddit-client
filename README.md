@@ -1,10 +1,17 @@
-# Getting Started with Create React App
+# Diddit Reddit Client for sewing & Crafts subreddits
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was made in a part of CodeCademy's Front-end engineer carreer path. The purpose was to create a minimalistic Reddit Client using React and Redux. Because of my love to DIY projects, I decided to devote the client for Sewing and Crafts subreddits. For making the application more visual I decided to only show the posts that has a picture.
 
-## Available Scripts
+The application allows the user to view the posts of two subreddits, search posts within the subreddit with a searchterm and see stats and main comments of each post. 
 
-In the project directory, you can run:
+Visit the deployed application here:
+
+## Wireframes
+
+Here are wireframes I planned for different screen sizes:
+
+![MacBook Air_2](https://user-images.githubusercontent.com/115211431/208636234-083ec0ff-dd50-4e9c-a489-d5b5ae242f1a.png)
+![iPhone 13 in 5 colors_1](https://user-images.githubusercontent.com/115211431/208636291-7c7ebae5-1208-40bf-b6e9-dc2f6cb89e6c.png)
 
 ### `npm start`
 
