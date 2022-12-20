@@ -1,6 +1,6 @@
-import arrowup from '../../Assets/images/arrowup.png';
-import arrowdown from '../../Assets/images/arrowdown.png';
-import commentsicon from '../../Assets/images/commentsicon.png';
+import arrowup from '../../Assets/Images/arrowup.png';
+import arrowdown from '../../Assets/Images/arrowdown.png';
+import commentsicon from '../../Assets/Images/commentsicon.png';
 import Comments from '../Comments/Comments.js';
 import { useDispatch } from 'react-redux';
 import { utcToString } from '../../Utils/util';

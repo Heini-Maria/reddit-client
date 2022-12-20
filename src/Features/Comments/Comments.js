@@ -1,5 +1,5 @@
-import commentsicon from '../../Assets/images/commentsicon.png';
-import close from '../../Assets/images/close.png';
+import commentsicon from '../../Assets/Images/commentsicon.png';
+import close from '../../Assets/Images/close.png';
 import Comment from '../Comment/Comment.js';
 import { useDispatch } from 'react-redux';
 import { toggleShowingComments } from '../Feed/FeedSlice';

@@ -1,5 +1,5 @@
-import arrowup from '../../Assets/images/arrowup.png';
-import arrowdown from '../../Assets/images/arrowdown.png';
+import arrowup from '../../Assets/Images/arrowup.png';
+import arrowdown from '../../Assets/Images/arrowdown.png';
 import { utcToString } from '../../Utils/util';
 
 const Comment = ({comment}) => {

@@ -1,4 +1,4 @@
-import searchdiy from '../../Assets/images/searchdiy.png'
+import searchdiy from '../../Assets/Images/searchdiy.png'
 import { useSelector } from 'react-redux';
 import { setSearchText } from './SearchSlice';
 import { useDispatch } from 'react-redux';
