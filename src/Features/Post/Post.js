@@ -7,16 +7,19 @@ import { utcToString } from '../../Utils/util';
 import { setComments, toggleShowingComments} from '../Feed/FeedSlice';
 
 
+
 const Post  = (props) =>{
     const dispatch = useDispatch();
     const index = props.id;
     const permalink = props.post.data.permalink;
     const comments = props.post.comments;
+    
+
 
     const getPostComments = async (permalink) => {
         try {
           await fetch(`https://www.reddit.com/${permalink}.json`)
-            .then((response) => response.json())
+            .then((res) => res.json())
             .then(jsonResponse => {
               const comments = jsonResponse[1].data.children.map((comment) => comment.data)
               dispatch(setComments({ index, comments }))
@@ -58,7 +61,7 @@ const Post  = (props) =>{
                 <button 
                 className='comments-button'
                 onClick = {handleClick}>
-                <img className='comments-icon' src={commentsicon}/>
+                <img className='comments-icon' src={commentsicon} alt='comments icon'/>
                 <p>{props.post.data.num_comments}</p>
                 </button>
                 <a href={`https://www.reddit.com/${permalink}`} target='_blank'>Check on Reddit</a>

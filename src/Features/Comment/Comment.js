@@ -11,9 +11,9 @@ const Comment = ({comment}) => {
             </div>
             <p>{comment.body}</p>
             <span className='voting'>
-                    <img className='post-icon' src={arrowup}/>
+                    <img className='post-icon' src={arrowup} alt='arrow up'/>
                     <p>{comment.score}</p>
-                    <img className='post-icon' src={arrowdown}/>
+                    <img className='post-icon' src={arrowdown} alt='arrow down'/>
             </span>
         </section>
     )

@@ -19,7 +19,7 @@ console.log(comments);
     <section className='comments'>
         <div className='comments-top-bar'>
             <article className='top-bar-item'>
-                <img className='comments-icon'src={commentsicon}/>
+                <img className='comments-icon'src={commentsicon} alt='comments icon'/>
                 <h2>{comments.length} Comments</h2>
             </article>
             <aside className='top-bar-item'>

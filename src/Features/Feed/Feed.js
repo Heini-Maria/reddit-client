@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import { setPosts, setIsloading } from './FeedSlice';
 
 
+
 const Feed = ({subreddit}) => {
 const dispatch = useDispatch();
 const posts = useSelector((state) => state.feed.posts);
@@ -13,7 +14,7 @@ const isLoading = useSelector((state) => state.feed.isLoading);
 
 console.log(searchText);
 
- const generateFeed = () => {
+const generateFeed = () => {
   dispatch(setIsloading(true));
     fetch(`https://www.reddit.com/r/${subreddit}.json?limit=50`).then(res => {
       if(res.status!==200){
@@ -54,13 +55,13 @@ console.log(searchText);
         }
       });
     })
-  } 
+  }  
  
 
 useEffect(() => {
-  
   console.log(isLoading);
-  generateFeed()
+  
+  dispatch(setPosts(generateFeed()))
   
 
 }, [subreddit, searchText]);
