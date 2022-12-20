@@ -1,4 +1,4 @@
-# Diddit Reddit Client for sewing & Crafts subreddits
+# Diddit  = Reddit Client for sewing & Crafts subreddits
 
 This project was made in a part of CodeCademy's Front-end engineer carreer path. The purpose was to create a minimalistic Reddit Client using React and Redux. Because of my love to DIY projects, I decided to devote the client for Sewing and Crafts subreddits. For making the application more visual I decided to only show the posts that has picture.
 
