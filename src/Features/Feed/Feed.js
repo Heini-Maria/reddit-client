@@ -25,7 +25,7 @@ const generateFeed = () => {
         if(data!==null){
           const posts = data.data.children
         .filter(post => {
-            if (post.data.post_hint == 'image') return true;
+            if (post.data.post_hint === 'image') return true;
             return false;
           })
           const detailedPosts = posts.map((post) => ({
@@ -36,7 +36,7 @@ const generateFeed = () => {
             errorComments: false,
             
           }));
-          if (searchText == '') {
+          if (searchText === '') {
             dispatch(setPosts(detailedPosts));
             dispatch(setIsloading(false));
           } else {
@@ -71,7 +71,7 @@ console.log(posts)
     return (
         <section className='feed'>
            { 
-            (isLoading == true) ? <div className='loading'></div> :
+            (isLoading === true) ? <div className='loading'></div> :
             (posts.length > 0 ) ? posts.map((post, index) => <Post key={index} id={index} post={post} />) : <h2 className='noresult'>No posts found..</h2>
          
            } 
