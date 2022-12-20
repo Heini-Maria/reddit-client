@@ -18,6 +18,7 @@ Here are wireframes I planned for different screen sizes:
   * React
   * Redux
   * Redux Toolkit
+  * Jest & RTL
     
 ## Features
 
@@ -37,7 +38,7 @@ Here are wireframes I planned for different screen sizes:
   * Fetch the comment replies as a part of the comments view
   * Show the comment authors profile picture on comments view
   * Refactore the code to make testing easier
-  * write tests for components
+  * write tests for each relevant component
   
 ## Personal experience 
 
