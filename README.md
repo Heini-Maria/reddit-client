@@ -1,8 +1,8 @@
 # Diddit  = Reddit Client for sewing & Crafts subreddits
 
-This project was made in a part of CodeCademy's Front-end engineer carreer path. The purpose was to create a minimalistic Reddit Client using React and Redux. Because of my love to DIY projects, I decided to devote the client for Sewing and Crafts subreddits. For making the application more visual I decided to only show the posts that has picture.
+This project was made as a part of Codecademy's Front-end engineer career path. The purpose was to create a minimalistic Reddit Client using React and Redux. Because of my love for DIY projects, I decided to devote the client to Sewing and Crafts subreddits. For making the application more visual I decided to only show the posts that have pictures.
 
-The application allows the user to view the posts of two subreddits, search posts within the subreddit with a searchterm and see stats and main comments of each post. 
+The application allows the user to view the posts of two subreddits, search posts within the subreddit with a search term and see stats and main comments of each post. 
 
 Visit the deployed application here: https://cosmic-kringle-9deec8.netlify.app
 
