@@ -22,7 +22,7 @@ export const feedSlice = createSlice({
       state.isLoading = action.payload;
     },
   },
-});
+})
 
 export const {
   setPosts,
