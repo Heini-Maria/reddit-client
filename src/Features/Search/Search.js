@@ -1,39 +1,34 @@
-import searchdiy from '../../Assets/Images/searchdiy.png'
-import { useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import searchdiy from '../../Assets/Images/searchdiy.png';
 import { setSearchText } from './SearchSlice';
-import { useDispatch } from 'react-redux';
 
+function Search() {
+  const searchText = useSelector((state) => state.search.searchText);
+  const dispatch = useDispatch();
 
-
-const Search = () =>{
-const searchText = useSelector((state) => state.search.searchText);
-const dispatch = useDispatch();
-console.log()
-
-    
-
-const handleClick =(e) =>{
+  const handleClick = (e) => {
     dispatch(setSearchText(e.target.value));
-}
+  };
 
-console.log(searchText);
-
-return (
-<form className='search-bar'>
-    <input 
-    type="text" 
-    placeholder='Search..' 
-    name="q"
-    value= {searchText}
-    onChange={(e) => dispatch(setSearchText(e.target.value))}
-    />
-    <button type="submit" 
-    className='submit-button'
-    onClick= {handleClick}
-    name= 'Search'
-    ><img src={searchdiy} alt='serach icon'/></button>
-    
-</form>    
-)    
+  return (
+    <form className="search-bar">
+      <input
+        type="text"
+        placeholder="Search.."
+        name="q"
+        value={searchText}
+        onChange={(e) => dispatch(setSearchText(e.target.value))}
+      />
+      <button
+        type="submit"
+        className="submit-button"
+        onClick={handleClick}
+        name="Search"
+      >
+        <img src={searchdiy} alt="serach icon" />
+      </button>
+    </form>
+  );
 }
 export default Search;
