@@ -1,14 +1,12 @@
+import React from 'react';
 import Feed from '../Feed/Feed';
 
-
-const Sewing = () => {
-const subreddit = 'sewing'
-
-
-return (
+function Sewing() {
+  const subreddit = 'sewing';
+  return (
     <section className="diy">
-        <Feed subreddit={subreddit} />
+      <Feed subreddit={subreddit} />
     </section>
-)
+  );
 }
 export default Sewing;
