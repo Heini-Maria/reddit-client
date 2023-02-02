@@ -1,7 +1,4 @@
-import {createSlice} from '@reduxjs/toolkit';
-
-
-
+import { createSlice } from '@reduxjs/toolkit';
 
 export const feedSlice = createSlice({
   name: 'feedSlice',
@@ -11,7 +8,7 @@ export const feedSlice = createSlice({
     isError: false,
   },
   reducers: {
-    setPosts(state,action){
+    setPosts(state, action) {
       state.posts = action.payload;
     },
     setComments(state, action) {
@@ -21,11 +18,11 @@ export const feedSlice = createSlice({
       state.posts[action.payload].showingComments = !state.posts[action.payload]
         .showingComments;
     },
-    setIsloading(state,action) {
-      state.isLoading = action.payload
+    setIsloading(state, action) {
+      state.isLoading = action.payload;
     },
   },
-})
+});
 
 export const {
   setPosts,
