@@ -28,23 +28,24 @@ html {
 }
 h1 {
   font-family: 'Titan_One', cursive;
-  font-size: 1.5em;
+  font-size: 2.2rem;
   color: #3B3A3A;
 }
 h2 {
   font-family: 'Patrick Hand', cursive;
-  font-size: 1.2em;
+  font-size: 1.6rem;
   padding-top: 1.5em;
 }
 p {
   font-family: 'Actor', sans-serif;
   color: #3B3A3A;
-  font-size: 0.8em;
+  font-size: 1.4rem;
 }
 a {
   color: #3B3A3A;
   font-style: bold;
   text-decoration: underline;
+  font-size: 1.4rem;
 }
 ul li {
   list-style: none;
@@ -57,7 +58,7 @@ ul li {
 
 .App-header {
   background-color: white;
-  height: 5em;
+  min-height: 5em;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -78,6 +79,7 @@ ul li {
   width: 6em;
   border-radius: 0.6em;
   font-family: 'Patrick_Hand', cursive;
+  font-size: 1rem;
   text-transform: uppercase;
   margin-left: 0.5em;
   color: #3B3A3A;
@@ -119,37 +121,14 @@ ul li {
   height: 2.2em;
 }
 .search-bar input {
-  height:2em;
+  height: 2rem;
   background: transparent;
+  font-size: 1rem;
   padding: 0.8em;
   font-family: 'Actor', sans-serif;
   border: none;
 }
 
-@media only screen and (max-width: 650px) {
-
-  .nav button {
-    width: 5em;
-    font-size: 0.6em;
-    padding: 0.5em 0.2em;
-    margin-bottom: 0.2em;
-  }
-  .search-bar {
-    display: none;
-  }
-}
-@media only screen and (max-width: 320px) {
-  .App-header {
-    padding: 0 1em;
-  }
-  .nav-logo {
-    height: 0.5em;
-    width: 50%
-  }
-  h1 {
-    font-size: 1em;
-  }
-}
 .diy, .crafts {
   display: flex;
   justify-content: space-around;
@@ -189,8 +168,8 @@ ul li {
 .post-icon,
 .comments-icon,
 .close-icon  {
-  height: 1em;
-  width: 1em;
+  height: 2em;
+  width: 2em;
 }
 .post-aside {
   font-family: 'Actor', sans-serif;
@@ -248,18 +227,7 @@ h2.noresult {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-@media only screen and (max-width: 530px) {
-  .feed {
-    width: 80%;
-  }
-  .post-aside {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .post-aside > * {
-    margin-top: 0.3em;
-  }
-}
+
 .comments {
   position: fixed;
   width: 80%;
@@ -314,17 +282,6 @@ h2.noresult {
   padding: 0.8em 0em 0.6em 0.5em;
   font-weight: bold;
 }
-@media only screen and (max-width: 270px) {
-  .comments-top-bar {
-    width: 60%;
-  }
-  .top-bar-item h2 {
-    font-size: 1em;
-  }
-  .top-bar-item button {
-    width: 1em;
-  }
-}
 
 ::-webkit-scrollbar {
   width: 1em;
@@ -344,6 +301,56 @@ h2.noresult {
 ::-webkit-scrollbar-thumb:hover {
   background: #3B3A3A;
 }
+
+@media only screen and (max-width: 650px) {
+
+  .nav button {
+    width: 5em;
+    font-size: 0.6em;
+    padding: 0.5em 0.2em;
+    margin-bottom: 0.2em;
+  }
+  .search-bar {
+    display: none;
+  }
+}
+@media only screen and (max-width: 530px) {
+  .feed {
+    width: 80%;
+  }
+  .post-aside {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .post-aside > * {
+    margin-top: 0.3em;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .App-header {
+    padding: 0 1em;
+  }
+  .nav-logo {
+    height: 0.5em;
+    width: 50%
+  }
+  h1 {
+    font-size: 1em;
+  }
+}
+
+@media only screen and (max-width: 270px) {
+  .comments-top-bar {
+    width: 60%;
+  }
+  .top-bar-item h2 {
+    font-size: 1em;
+  }
+  .top-bar-item button {
+    width: 1em;
+  }
+}
+
 @media only screen and (max-width: 249px){
   ::-webkit-scrollbar {
     width: 0.5em;
