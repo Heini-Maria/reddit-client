@@ -51,7 +51,6 @@ function Feed({ subreddit }) {
   };
 
   useEffect(() => {
-    console.log(isLoading);
     dispatch(setPosts(generateFeed()));
   }, [subreddit, searchText]);
 
