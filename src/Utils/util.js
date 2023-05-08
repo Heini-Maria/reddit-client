@@ -9,9 +9,9 @@ export const utcToString = (utcCreated) => {
   const secondsYear = secondsDay * 365;
 
   if (secondsSince < secondsMin) {
-    return 'less than minute.';
+    return "less than minute.";
   } else if (secondsSince < secondsHr) {
-    return 'less than hour';
+    return "less than hour";
   } else if (secondsSince < secondsDay) {
     const hours = Math.floor(secondsSince / secondsHr);
     if (hours < 2) {
@@ -20,7 +20,7 @@ export const utcToString = (utcCreated) => {
     return `${hours} hours`;
   } else if (secondsSince < secondsMonth) {
     const days = Math.floor(secondsSince / secondsDay);
-    if (days === 1) return '1 day';
+    if (days === 1) return "1 day";
     return `${days} days`;
   } else if (secondsSince < secondsYear) {
     const months = Math.floor(secondsSince / secondsMonth);

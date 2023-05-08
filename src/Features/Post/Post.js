@@ -1,11 +1,11 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import arrowup from '../../Assets/Images/arrowup.png';
-import arrowdown from '../../Assets/Images/arrowdown.png';
-import commentsicon from '../../Assets/Images/commentsicon.png';
-import Comments from '../Comments/Comments';
-import { utcToString } from '../../Utils/util';
-import { setComments, toggleShowingComments } from '../Feed/FeedSlice';
+import React from "react";
+import { useDispatch } from "react-redux";
+import arrowup from "../../Assets/Images/arrowup.png";
+import arrowdown from "../../Assets/Images/arrowdown.png";
+import commentsicon from "../../Assets/Images/commentsicon.png";
+import Comments from "../Comments/Comments";
+import { utcToString } from "../../Utils/util";
+import { setComments, toggleShowingComments } from "../Feed/FeedSlice";
 
 function Post(props) {
   const dispatch = useDispatch();
@@ -17,7 +17,9 @@ function Post(props) {
       await fetch(`https://www.reddit.com/${permalink}.json`)
         .then((res) => res.json())
         .then((jsonResponse) => {
-          const comments = jsonResponse[1].data.children.map((comment) => comment.data);
+          const comments = jsonResponse[1].data.children.map(
+            (comment) => comment.data
+          );
           dispatch(setComments({ index, comments }));
         });
     } catch (error) {
@@ -39,11 +41,13 @@ function Post(props) {
     dispatch(toggleShowingComments(index));
   };
   return (
-    <section className="post" >
+    <section className="post">
       <article>
         <div className="post-texts">
           <p>
-            {utcToString(props.post.data.created_utc)} ago by {props.post.data.author}</p>
+            {utcToString(props.post.data.created_utc)} ago by{" "}
+            {props.post.data.author}
+          </p>
           <h2>{props.post.data.title}</h2>
         </div>
         <img className="post-img" src={props.post.data.url} alt="post visual" />
@@ -54,18 +58,25 @@ function Post(props) {
           <p>{props.post.data.ups}</p>
           <img className="post-icon" src={arrowdown} alt="Arrow down" />
         </span>
-        <button
-          className="comments-button"
-          onClick={handleClick}
-          type="button"
-        >
-          <img className="comments-icon" src={commentsicon} alt="comments icon" />
+        <button className="comments-button" onClick={handleClick} type="button">
+          <img
+            className="comments-icon"
+            src={commentsicon}
+            alt="comments icon"
+          />
           <p>{props.post.data.num_comments}</p>
         </button>
-        <a href={`https://www.reddit.com/${permalink}`} target="_blank" rel="noreferrer">Check on Reddit</a>
+        <a
+          href={`https://www.reddit.com/${permalink}`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Check on Reddit
+        </a>
       </aside>
-      {props.post.showingComments ?  
-        <Comments comments={comments} index={index} post={props.post.data} /> : null }
+      {props.post.showingComments ? (
+        <Comments comments={comments} index={index} post={props.post.data} />
+      ) : null}
     </section>
   );
 }

@@ -1,7 +1,7 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import searchdiy from '../../Assets/Images/searchdiy.png';
-import { setSearchText } from './SearchSlice';
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import searchdiy from "../../Assets/Images/searchdiy.png";
+import { setSearchText } from "./SearchSlice";
 
 function Search() {
   const searchText = useSelector((state) => state.search.searchText);

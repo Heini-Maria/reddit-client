@@ -1,7 +1,7 @@
-import React from 'react';
-import arrowup from '../../Assets/Images/arrowup.png';
-import arrowdown from '../../Assets/Images/arrowdown.png';
-import { utcToString } from '../../Utils/util';
+import React from "react";
+import arrowup from "../../Assets/Images/arrowup.png";
+import arrowdown from "../../Assets/Images/arrowdown.png";
+import { utcToString } from "../../Utils/util";
 
 function Comment({ comment }) {
   return (
