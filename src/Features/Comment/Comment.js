@@ -1,6 +1,6 @@
 import React from "react";
-import arrowup from "../../Assets/Images/arrowup.png";
-import arrowdown from "../../Assets/Images/arrowdown.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons'
 import { utcToString } from "../../Utils/util";
 
 function Comment({ comment }) {
@@ -15,9 +15,9 @@ function Comment({ comment }) {
       </div>
       <p>{comment.body}</p>
       <span className="voting">
-        <img className="post-icon" src={arrowup} alt="arrow up" />
+        <FontAwesomeIcon className="icon" icon={faArrowUp} />
         <p>{comment.score}</p>
-        <img className="post-icon" src={arrowdown} alt="arrow down" />
+        <FontAwesomeIcon className="icon" icon={faArrowDown} />
       </span>
     </section>
   );

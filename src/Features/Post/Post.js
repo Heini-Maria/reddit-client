@@ -1,9 +1,9 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { useDispatch } from "react-redux";
-import arrowup from "../../Assets/Images/arrowup.png";
-import arrowdown from "../../Assets/Images/arrowdown.png";
-import commentsicon from "../../Assets/Images/commentsicon.png";
 import Comments from "../Comments/Comments";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faComment, faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons'
 import { utcToString } from "../../Utils/util";
 import { setComments, toggleShowingComments } from "../Feed/FeedSlice";
 
@@ -26,22 +26,26 @@ function Post(props) {
       console.log(error);
     }
   };
-  const fetchComments = (index, permalink) => async (dispatch) => {
+  const fetchComments = (index, permalink) => async () => {
     try {
       await getPostComments(permalink);
     } catch (error) {
       console.log(error);
     }
   };
-
   const handleClick = async () => {
     if (props.post.comments.length < 1) {
       dispatch(fetchComments(index, permalink));
     }
     dispatch(toggleShowingComments(index));
-  };
+  }
   return (
-    <section className="post">
+    <motion.section 
+      initial={{ opacity: 0,  x: 100}}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ delay: 0.2, ease: "easeInOut",  duration: 0.5}}
+      viewport={{ once: true }}
+      className="post">
       <article>
         <div className="post-texts">
           <p>
@@ -53,19 +57,17 @@ function Post(props) {
         <img className="post-img" src={props.post.data.url} alt="post visual" />
       </article>
       <aside className="post-aside">
-        <span className="voting">
-          <img className="post-icon" src={arrowup} alt="Arrow up" />
-          <p>{props.post.data.ups}</p>
-          <img className="post-icon" src={arrowdown} alt="Arrow down" />
-        </span>
-        <button className="comments-button" onClick={handleClick} type="button">
-          <img
-            className="comments-icon"
-            src={commentsicon}
-            alt="comments icon"
-          />
-          <p>{props.post.data.num_comments}</p>
-        </button>
+        <div>
+          <span className="voting">
+            <FontAwesomeIcon className="icon" icon={faArrowUp} />
+            <p>{props.post.data.ups}</p>
+            <FontAwesomeIcon className="icon" icon={faArrowDown} />
+          </span>
+          <button className="comments-button" onClick={handleClick} type="button">
+            <FontAwesomeIcon className="icon" icon={faComment} />
+            <p>{props.post.data.num_comments}</p>
+          </button>
+        </div>
         <a
           href={`https://www.reddit.com/${permalink}`}
           target="_blank"
@@ -77,7 +79,7 @@ function Post(props) {
       {props.post.showingComments ? (
         <Comments comments={comments} index={index} post={props.post.data} />
       ) : null}
-    </section>
+    </motion.section>
   );
 }
 

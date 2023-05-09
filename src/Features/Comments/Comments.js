@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import commentsicon from "../../Assets/Images/commentsicon.png";
-import close from "../../Assets/Images/close.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faComment, faXmark } from '@fortawesome/free-solid-svg-icons'
 import Comment from "../Comment/Comment";
 import { toggleShowingComments } from "../Feed/FeedSlice";
 
@@ -15,16 +15,12 @@ function Comments({ comments, index }) {
     <section className="comments">
       <div className="comments-top-bar">
         <article className="top-bar-item">
-          <img
-            className="comments-icon"
-            src={commentsicon}
-            alt="comments icon"
-          />
+          <FontAwesomeIcon className="icon" icon={faComment} />
           <h2>{comments.length} Comments</h2>
         </article>
         <aside className="top-bar-item">
           <button type="button" onClick={handleClick}>
-            <img className="close-icon" src={close} alt="close" />
+            <FontAwesomeIcon className="icon" icon={faXmark} />
           </button>
         </aside>
       </div>

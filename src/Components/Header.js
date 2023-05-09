@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import logo from '../Assets/Images/logo.png';
 import Search from '../Features/Search/Search';
 
@@ -22,23 +22,16 @@ function Header() {
         <img src={logo} className="App-logo" alt="logo" />
         <h1 className="logo-text">Diddit</h1>
       </section>
-      {/* <nav className="nav">
-        <NavLink to="/">
-          <button type="button" className="button-diy">Sewing</button>
-        </NavLink>
-        <NavLink to="/crafts">
-          <button type="button" className="button-crafts">Crafts</button>
-        </NavLink>
-      </nav> */}
       <div className="switch-container">
+        <p>Sewing</p>
           <label className="switch">
             <input
               type="checkbox"
               onClick={() => {toggleFeed(location)}}
-              /* checked={theme === "dark"} */
             />
             <span className="slider"></span>
           </label>
+          <p>Crafts</p>
         </div>
       <Search />
     </header>
