@@ -113,7 +113,7 @@ ul li {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--text-color);
+  background-color: #a3a2a2;
   -webkit-transition: 0.4s;
   transition: 0.4s;
   border-radius: 34px;
