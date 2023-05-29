@@ -1,10 +1,10 @@
-import "./App.css";
-import React from "react";
-import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
-import Header from "../Components/Header";
-import Sewing from "../Features/Sewing/Sewing";
-import Crafts from "../Features/Crafts/Crafts";
-import Comments from "../Features/Comments/Comments";
+import './App.css';
+import React from 'react';
+import { Routes, Route, HashRouter as Router } from 'react-router-dom';
+import Header from '../Components/Header';
+import Sewing from '../Features/Sewing/Sewing';
+import Crafts from '../Features/Crafts/Crafts';
+import Comments from '../Features/Comments/Comments';
 
 function App() {
   return (
