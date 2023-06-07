@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "Titan One";
+  src: url("./Assets/fonts/Titan_One/TitanOne-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Patrick Hand";
+  src: url("./Assets/fonts/Patrick_Hand/PatrickHand-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Actor";
+  src: url("./Assets/fonts/Actor/Actor-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

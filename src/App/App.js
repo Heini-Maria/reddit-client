@@ -1,4 +1,4 @@
-import './App.css';
+import '../index.css';
 import React from 'react';
 import { Routes, Route, HashRouter as Router } from 'react-router-dom';
 import Header from '../Components/Header';

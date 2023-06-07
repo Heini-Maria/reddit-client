@@ -1,7 +1,7 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import searchdiy from "../../Assets/Images/searchdiy.png";
-import { setSearchText } from "./SearchSlice";
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import searchdiy from '../../Assets/Images/searchdiy.png';
+import { setSearchText } from './SearchSlice';
 
 function Search() {
   const searchText = useSelector((state) => state.search.searchText);
@@ -26,7 +26,7 @@ function Search() {
         onClick={handleClick}
         name="Search"
       >
-        <img src={searchdiy} alt="serach icon" />
+        <img src={searchdiy} alt="seacrh icon" className="h-12" />
       </button>
     </form>
   );
