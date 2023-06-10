@@ -3,8 +3,8 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     colors: {
-      purple: '#b689c0',
-      yellow: '#ffffde',
+      purple: '#F0D9FF',
+      yellow: '#FFFDDE',
       gray: '#a3a2a2',
       white: '#fff',
       accent: '#873ea3',
@@ -17,7 +17,7 @@ module.exports = {
         actor: ['"Actor"', 'sans-serif'],
       },
       fontSize: {
-        base: '18px',
+        base: '20px',
       },
     },
   },

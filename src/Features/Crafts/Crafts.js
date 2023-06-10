@@ -1,12 +1,8 @@
-import React from "react";
-import Feed from "../Feed/Feed";
+import React from 'react';
+import Feed from '../Feed/Feed';
 
 function Crafts() {
-  const subreddit = "crafts";
-  return (
-    <section className="crafts">
-      <Feed subreddit={subreddit} />
-    </section>
-  );
+  const subreddit = 'crafts';
+  return <Feed subreddit={subreddit} />;
 }
 export default Crafts;

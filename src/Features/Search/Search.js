@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import searchdiy from '../../Assets/Images/searchdiy.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { setSearchText } from './SearchSlice';
 
 function Search() {
@@ -12,8 +13,9 @@ function Search() {
   };
 
   return (
-    <form className="search-bar">
+    <form className="rounded-full px-3 flex border-solid border-2 border-text p-1">
       <input
+        className="rounded-full  outline-none text-text"
         type="text"
         placeholder="Search.."
         name="q"
@@ -26,7 +28,10 @@ function Search() {
         onClick={handleClick}
         name="Search"
       >
-        <img src={searchdiy} alt="seacrh icon" className="h-12" />
+        <FontAwesomeIcon
+          icon={faMagnifyingGlass}
+          className="rounded-full"
+        />
       </button>
     </form>
   );

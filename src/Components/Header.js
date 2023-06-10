@@ -20,10 +20,10 @@ function Header() {
   };
 
   return (
-    <header className="min-h-[6rem] flex justify-between items-center shadow px-10">
+    <header className="min-h-[8rem] flex justify-between items-center shadow-md px-10 relative">
       <section className="flex items-center">
-        <img src={logo} className="h-12" alt="logo" />
-        <h1 className="font-titan text-3xl text-text">Diddit</h1>
+        <img src={logo} className="h-14" alt="logo" />
+        <h1 className="ml-1 font-titan text-4xl text-text">Diddit</h1>
       </section>
       <div className="flex items-center">
         <p className="font-actor text-2xl text-text">Sewing</p>
@@ -37,11 +37,11 @@ function Header() {
           />
           <span className="absolute inset-0 rounded-full bg-gray"></span>
           {isActive ? (
-            <span className="absolute right-1 flex items-center justify-center w-6 h-6 bg-white rounded-full transition-transform duration-400">
-              <FontAwesomeIcon icon={faHammer} />
+            <span className="absolute right-1 flex items-center justify-center w-6 h-6 m-0.5 bg-white rounded-full transition-transform duration-400">
+              <FontAwesomeIcon icon={faHammer} className="h-3.5" />
             </span>
           ) : (
-            <span className="absolute left-1 flex items-center justify-center w-6 h-6 bg-white rounded-full transition-transform duration-400">
+            <span className="absolute left-1 flex items-center justify-center w-6 h-6 m-0.5 bg-white rounded-full transition-transform duration-400">
               <FontAwesomeIcon icon={faScissors} />
             </span>
           )}

@@ -1,11 +1,15 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { useDispatch } from "react-redux";
-import Comments from "../Comments/Comments";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faComment, faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons'
-import { utcToString } from "../../Utils/util";
-import { setComments, toggleShowingComments } from "../Feed/FeedSlice";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { useDispatch } from 'react-redux';
+import Comments from '../Comments/Comments';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faComment,
+  faArrowUp,
+  faArrowDown,
+} from '@fortawesome/free-solid-svg-icons';
+import { utcToString } from '../../Utils/util';
+import { setComments, toggleShowingComments } from '../Feed/FeedSlice';
 
 function Post(props) {
   const dispatch = useDispatch();
@@ -38,47 +42,61 @@ function Post(props) {
       dispatch(fetchComments(index, permalink));
     }
     dispatch(toggleShowingComments(index));
-  }
+  };
   return (
-    <motion.section 
-      initial={{ opacity: 0,  x: 100}}
+    <motion.section
+      initial={{ opacity: 0, x: 100 }}
       whileInView={{ opacity: 1, x: 0 }}
-      transition={{ delay: 0.2, ease: "easeInOut",  duration: 0.5}}
+      transition={{ delay: 0.2, ease: 'easeInOut', duration: 0.5 }}
       viewport={{ once: true }}
-      className="post">
-      <article>
-        <div className="post-texts">
-          <p>
-            {utcToString(props.post.data.created_utc)} ago by{" "}
+      className="container grid grid-rows-3 shadow-md bg-white py-4 px-6 mt-3 rounded-md"
+    >
+      <article className="tile row-span-3 container grid grid-rows-12">
+        <div className="tile row-span-1">
+          <p className="text-text text-xl font-bold font-patrick my-4">
+            {utcToString(props.post.data.created_utc)} ago by{' '}
             {props.post.data.author}
           </p>
-          <h2>{props.post.data.title}</h2>
+          <h2 className="text-text text-2xl font-actor font-bold">
+            {props.post.data.title}
+          </h2>
         </div>
-        <img className="post-img" src={props.post.data.url} alt="post visual" />
+        <img
+          className="tile row-span-11 place-self-stretch self-start my-2"
+          src={props.post.data.url}
+          alt="post visual"
+        />
       </article>
-      <aside className="post-aside">
-        <div>
-          <span className="voting">
-            <FontAwesomeIcon className="icon" icon={faArrowUp} />
-            <p>{props.post.data.ups}</p>
-            <FontAwesomeIcon className="icon" icon={faArrowDown} />
+      <aside className="tile col-span-full row-span-1 grid grid-cols-3">
+        <div className="tile col-span-2 flex">
+          <span className="tile col-span-3 flex items-center">
+            <FontAwesomeIcon className="" icon={faArrowUp} />
+            <p className="mx-1 text-text font-bold">{props.post.data.ups}</p>
+            <FontAwesomeIcon className="" icon={faArrowDown} />
           </span>
-          <button className="comments-button" onClick={handleClick} type="button">
-            <FontAwesomeIcon className="icon" icon={faComment} />
-            <p>{props.post.data.num_comments}</p>
+          <button
+            className="tile col-span-1 flex items-center ml-6 hover:translate-y-0.5"
+            onClick={handleClick}
+            type="button"
+          >
+            <FontAwesomeIcon className="mr-1" icon={faComment} />
+            <p className="text-text font-bold">
+              {props.post.data.num_comments}
+            </p>
           </button>
         </div>
         <a
           href={`https://www.reddit.com/${permalink}`}
           target="_blank"
           rel="noreferrer"
+          className="tile col-start-3 text-text underline"
         >
           Check on Reddit
         </a>
+        {props.post.showingComments ? (
+          <Comments comments={comments} index={index} post={props.post.data} />
+        ) : null}
       </aside>
-      {props.post.showingComments ? (
-        <Comments comments={comments} index={index} post={props.post.data} />
-      ) : null}
     </motion.section>
   );
 }

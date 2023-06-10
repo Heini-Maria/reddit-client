@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import Post from "../Post/Post";
-import { setPosts, setIsloading } from "./FeedSlice";
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import Post from '../Post/Post';
+import { setPosts, setIsloading } from './FeedSlice';
 
 function Feed({ subreddit }) {
   const dispatch = useDispatch();
@@ -19,7 +19,7 @@ function Feed({ subreddit }) {
       res.json().then((data) => {
         if (data !== null) {
           const posts = data.data.children.filter((post) => {
-            if (post.data.post_hint === "image") return true;
+            if (post.data.post_hint === 'image') return true;
             return false;
           });
           const detailedPosts = posts.map((post) => ({
@@ -29,7 +29,7 @@ function Feed({ subreddit }) {
             loadingComments: false,
             errorComments: false,
           }));
-          if (searchText === "") {
+          if (searchText === '') {
             dispatch(setPosts(detailedPosts));
             dispatch(setIsloading(false));
           } else {
@@ -55,7 +55,11 @@ function Feed({ subreddit }) {
   }, [subreddit, searchText]);
 
   return (
-    <section className="feed">
+    <section
+      className={`${
+        subreddit === 'crafts' ? 'bg-yellow' : 'bg-purple'
+      } min-h-screen grid grid-cols-3 gap-10 pt-10 px-10`}
+    >
       {isLoading === true ? (
         <div className="loading"></div>
       ) : posts.length > 0 ? (
