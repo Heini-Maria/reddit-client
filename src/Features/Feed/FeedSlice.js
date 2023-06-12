@@ -21,10 +21,13 @@ export const feedSlice = createSlice({
     setIsloading(state, action) {
       state.isLoading = action.payload;
     },
+    setError(state, action) {
+      state.isError = action.payload;
+    }
   },
 });
 
-export const { setPosts, setComments, toggleShowingComments, setIsloading } =
+export const { setPosts, setComments, toggleShowingComments, setIsloading, setError } =
   feedSlice.actions;
 
 export default feedSlice.reducer;

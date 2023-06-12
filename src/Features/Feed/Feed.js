@@ -1,20 +1,21 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Post from '../Post/Post';
-import { setPosts, setIsloading } from './FeedSlice';
+import { setPosts, setIsloading, setError } from './FeedSlice';
 
 function Feed({ subreddit }) {
   const dispatch = useDispatch();
   const posts = useSelector((state) => state.feed.posts);
   const searchText = useSelector((state) => state.search.searchText);
   const isLoading = useSelector((state) => state.feed.isLoading);
+  const isError = useSelector((state) => state.feed.isError);
 
   const generateFeed = () => {
     dispatch(setIsloading(true));
     fetch(`https://www.reddit.com/r/${subreddit}.json?limit=50`).then((res) => {
       if (res.status !== 200) {
         console.log(` ${res.status} error!`);
-        return;
+        return dispatch(setError(true));
       }
       res.json().then((data) => {
         if (data !== null) {
@@ -44,6 +45,7 @@ function Feed({ subreddit }) {
             };
             dispatch(setPosts(search(searchText)));
             dispatch(setIsloading(false));
+            dispatch(setError(false));
           }
         }
       });
@@ -67,6 +69,13 @@ function Feed({ subreddit }) {
       ) : (
         <h2 className="noresult">No posts found..</h2>
       )}
+      {isError ? (
+        <div>
+          <h2 className="text-text text-base w-[100vw] font-bold mt-[20vh] animate-bounce-slow">
+            Woopsie something went wrong. Please try again later...
+          </h2>
+        </div>
+      ) : null}
     </section>
   );
 }
