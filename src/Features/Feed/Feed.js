@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Post from '../Post/Post';
+import Loader from '../../Components/Loader';
+import Error from '../../Components/Error';
 import { setPosts, setIsloading, setError } from './FeedSlice';
 
 function Feed({ subreddit }) {
@@ -15,7 +17,10 @@ function Feed({ subreddit }) {
     fetch(`https://www.reddit.com/r/${subreddit}.json?limit=50`).then((res) => {
       if (res.status !== 200) {
         console.log(` ${res.status} error!`);
-        return dispatch(setError(true));
+        dispatch(setIsloading(false));
+        dispatch(setPosts([]));
+        dispatch(setError(true));
+        return;
       }
       res.json().then((data) => {
         if (data !== null) {
@@ -63,19 +68,21 @@ function Feed({ subreddit }) {
       } min-h-screen grid grid-cols-3 gap-10 pt-10 px-10`}
     >
       {isLoading === true ? (
-        <div className="loading"></div>
+        <Loader />
       ) : posts.length > 0 ? (
         posts.map((post, index) => <Post key={index} id={index} post={post} />)
       ) : (
-        <h2 className="noresult">No posts found..</h2>
+        <h2
+          className={`${
+            isError
+              ? 'hidden'
+              : 'text-text text-base text-center font-bold mt-[20vh] animate-bounce-slow'
+          }`}
+        >
+          No posts found..
+        </h2>
       )}
-      {isError ? (
-        <div>
-          <h2 className="text-text text-base w-[100vw] font-bold mt-[20vh] animate-bounce-slow">
-            Woopsie something went wrong. Please try again later...
-          </h2>
-        </div>
-      ) : null}
+      {isError ? <Error /> : null}
     </section>
   );
 }
