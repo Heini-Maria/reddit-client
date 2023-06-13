@@ -13,6 +13,7 @@ function Feed({ subreddit }) {
   const isError = useSelector((state) => state.feed.isError);
 
   const generateFeed = () => {
+    dispatch(setError(false));
     dispatch(setIsloading(true));
     fetch(`https://www.reddit.com/r/${subreddit}.json?limit=50`).then((res) => {
       if (res.status !== 200) {
@@ -67,7 +68,7 @@ function Feed({ subreddit }) {
         subreddit === 'crafts' ? 'bg-yellow' : 'bg-purple'
       } min-h-screen grid grid-cols-3 gap-10 pt-10 px-10`}
     >
-      {isLoading === true ? (
+      {isLoading ? (
         <Loader />
       ) : posts.length > 0 ? (
         posts.map((post, index) => <Post key={index} id={index} post={post} />)
@@ -82,7 +83,7 @@ function Feed({ subreddit }) {
           No posts found..
         </h2>
       )}
-      {isError ? <Error /> : null}
+      {isError && <Error />}
     </section>
   );
 }
