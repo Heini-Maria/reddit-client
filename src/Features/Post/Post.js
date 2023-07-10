@@ -49,7 +49,7 @@ function Post(props) {
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ delay: 0.2, ease: 'easeInOut', duration: 0.5 }}
       viewport={{ once: true }}
-      className="container grid grid-rows-3 shadow-md bg-white py-4 px-6 mt-3 rounded-md"
+      className="container grid grid-rows-3 shadow-md bg-white py-4 px-2 sm:px-6 mt-3 rounded-md"
     >
       <article className="tile row-span-3 container grid grid-rows-12">
         <div className="tile row-span-1">

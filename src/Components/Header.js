@@ -8,20 +8,21 @@ import Search from '../Features/Search/Search';
 function Header() {
   const navigate = useNavigate();
   const location = useLocation();
-  const [isActive, setIsActive] = useState(false);
+  const [activePath, setActivePaht] = useState(location.pathname);
 
   const toggleFeed = (location) => {
     if (location.pathname === '/') {
       navigate('/crafts');
+      setActivePaht('/crafts');
     } else {
       navigate(-1);
+      setActivePaht('/');
     }
-    setIsActive(!isActive);
   };
 
   return (
-    <header className="min-h-[8rem] flex justify-between items-center shadow-md px-10 relative">
-      <section className="flex items-center">
+    <header className="min-h-[8rem] flex sm:justify-between flex-col sm:flex-row justify-center items-center shadow-md sm:px-10 px-4 relative">
+      <section className="flex items-center mb-4">
         <img src={logo} className="h-14" alt="logo" />
         <h1 className="ml-1 font-titan text-4xl text-text">Diddit</h1>
       </section>
@@ -36,7 +37,7 @@ function Header() {
             }}
           />
           <span className="absolute inset-0 rounded-full bg-gray"></span>
-          {isActive ? (
+          {activePath === '/crafts' ? (
             <span className="absolute right-1 flex items-center justify-center w-6 h-6 m-0.5 bg-white rounded-full transition-transform duration-400">
               <FontAwesomeIcon icon={faHammer} className="h-3.5" />
             </span>
