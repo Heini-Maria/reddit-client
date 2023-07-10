@@ -13,7 +13,7 @@ function Search() {
   };
 
   return (
-    <form className="rounded-full px-3 flex border-solid border-2 border-text p-1 sm:visible invisible">
+    <form className="rounded-full px-3 flex border-solid border-2 border-text p-1 md:visible invisible">
       <input
         className="rounded-full  outline-none text-text"
         type="text"

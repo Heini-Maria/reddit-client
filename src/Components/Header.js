@@ -21,7 +21,7 @@ function Header() {
   };
 
   return (
-    <header className="min-h-[8rem] flex sm:justify-between flex-col sm:flex-row justify-center items-center shadow-md sm:px-10 px-4 relative">
+    <header className="min-h-[8rem] flex md:justify-between flex-col md:flex-row justify-center items-center shadow-md md:px-10 px-4 relative">
       <section className="flex items-center mb-4">
         <img src={logo} className="h-14" alt="logo" />
         <h1 className="ml-1 font-titan text-4xl text-text">Diddit</h1>
