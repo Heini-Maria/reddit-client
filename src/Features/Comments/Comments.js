@@ -12,7 +12,7 @@ function Comments({ comments, index }) {
   };
 
   return (
-    <section className="z-10 absolute tile bg-white h-[50%] w-[calc(100%-4px)] sm:w-[calc(40%-40px)] md:w-[calc(25%-5px)] overflow-y-scroll overflow-x-hidden scroll-smooth">
+    <section className="z-10 absolute tile bg-white h-[50%] w-[calc(95%-30px)] sm:w-[calc(40%-40px)] md:w-[calc(25%-5px)] overflow-y-scroll overflow-x-hidden scroll-smooth">
       <div className="flex justify-between h-12 p-2 sticky top-0 bg-white shadow-md z-11 items-center">
         <article className="flex items-center">
           <FontAwesomeIcon className="mr-1" icon={faComment} />
