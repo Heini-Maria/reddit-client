@@ -1,7 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 export const feedSlice = createSlice({
-  name: "feedSlice",
+  name: 'feedSlice',
   initialState: {
     posts: [],
     isLoading: false,
@@ -21,10 +21,18 @@ export const feedSlice = createSlice({
     setIsloading(state, action) {
       state.isLoading = action.payload;
     },
+    setError(state, action) {
+      state.isError = action.payload;
+    },
   },
 });
 
-export const { setPosts, setComments, toggleShowingComments, setIsloading } =
-  feedSlice.actions;
+export const {
+  setPosts,
+  setComments,
+  toggleShowingComments,
+  setIsloading,
+  setError,
+} = feedSlice.actions;
 
 export default feedSlice.reducer;

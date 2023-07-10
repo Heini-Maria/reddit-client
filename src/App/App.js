@@ -1,4 +1,4 @@
-import './App.css';
+import '../index.css';
 import React from 'react';
 import { Routes, Route, HashRouter as Router } from 'react-router-dom';
 import Header from '../Components/Header';
@@ -13,7 +13,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Sewing />} />
-          <Route path="/crafts" element={<Crafts />} className="crafts" />
+          <Route path="/crafts" element={<Crafts />} />
           <Route path="/" element={<Comments />} />
         </Routes>
       </Router>

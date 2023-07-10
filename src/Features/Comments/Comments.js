@@ -1,9 +1,9 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faComment, faXmark } from '@fortawesome/free-solid-svg-icons'
-import Comment from "../Comment/Comment";
-import { toggleShowingComments } from "../Feed/FeedSlice";
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faComment, faXmark } from '@fortawesome/free-solid-svg-icons';
+import Comment from '../Comment/Comment';
+import { toggleShowingComments } from '../Feed/FeedSlice';
 
 function Comments({ comments, index }) {
   const dispatch = useDispatch();
@@ -12,15 +12,17 @@ function Comments({ comments, index }) {
   };
 
   return (
-    <section className="comments">
-      <div className="comments-top-bar">
-        <article className="top-bar-item">
-          <FontAwesomeIcon className="icon" icon={faComment} />
-          <h2>{comments.length} Comments</h2>
+    <section className="z-10 absolute tile bg-white h-[50%] w-[calc(95%-30px)] sm:w-[calc(40%-40px)] md:w-[calc(25%-5px)] overflow-y-scroll overflow-x-hidden scroll-smooth">
+      <div className="flex justify-between h-12 p-2 sticky top-0 bg-white shadow-md z-11 items-center">
+        <article className="flex items-center">
+          <FontAwesomeIcon className="mr-1" icon={faComment} />
+          <h2 className="font-patrick font-semibold text-text text-base">
+            {comments.length} Comments
+          </h2>
         </article>
-        <aside className="top-bar-item">
+        <aside className="hover:translate-y-0.5">
           <button type="button" onClick={handleClick}>
-            <FontAwesomeIcon className="icon" icon={faXmark} />
+            <FontAwesomeIcon className="h-5" icon={faXmark} />
           </button>
         </aside>
       </div>
